@@ -8,13 +8,28 @@ export const GlobalStyles = createGlobalStyle`
   }
   :focus {
         outline: 0;
-        box-shadow: 0  0 0 2px ${(props) => props.theme['green-500']};
+        box-shadow: 0  0 0 2px ${(props) => props.theme.colors.secondary};
+  }
+
+  html {
+    font-size: 62.5%;
   }
 
   body {
-    color: ${(props) => props.theme['gray-100']};
-    background-color: ${(props) => props.theme['gray-800']};
+    font-size: ${(props) => props.theme.font.sizes.medium};
+    color: ${(props) => props.theme.colors['gray-100']};
+    background-color: ${(props) => props.theme.colors['gray-800']};
     -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.secondary};
+    text-decoration: none;
+    transition: opacity 300ms ease-in-out;
+
+    &:hover {
+      opacity: .6;
+    }
   }
 
 

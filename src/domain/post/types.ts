@@ -53,20 +53,24 @@ export type PostCoverFormat = {
 };
 
 export type PostCover = PostCoverFormat & {
-  id: PostID;
-  alternativeText: string;
-  caption: string;
-  previewUrl: null;
-  provider: string;
-  created_by: number;
-  updated_by: number;
-  created_at: string;
-  updated_at: string;
-  formats: {
-    thumbnail: PostCoverFormat;
-    small: PostCoverFormat;
-    medium: PostCoverFormat;
-    large: PostCoverFormat;
+  data: {
+    id: PostID;
+    attributes: {
+      alternativeText: string;
+      caption: string;
+      previewUrl: null;
+      provider: string;
+      created_by: number;
+      updated_by: number;
+      created_at: string;
+      updated_at: string;
+      formats: {
+        thumbnail: PostCoverFormat;
+        small: PostCoverFormat;
+        medium: PostCoverFormat;
+        large: PostCoverFormat;
+      };
+    };
   };
 };
 
