@@ -4,6 +4,7 @@ import { GetPostsData } from '@/domain/post/types';
 import { HomeContainer } from '@/containers/home/style';
 import Image from 'next/image';
 import { MainContainer } from '@/components/main_container';
+import { PostCard } from '@/components/post_card';
 
 export interface HomePageProps {
   posts: GetPostsData;
@@ -15,17 +16,14 @@ export default function HomePage({ posts }: HomePageProps) {
       <HomeContainer>
         {posts.data.map((post) => {
           return (
-            <div key={post.id}>
-              <h2 key={post.attributes.slug}>{post.attributes.title}</h2>
-              <Image
-                src={
-                  post.attributes.cover.data.attributes.formats.thumbnail.url
-                }
-                width={225}
-                height={225}
-                alt=""
-              />
-            </div>
+            <PostCard
+              key={post.attributes.slug}
+              cover={
+                post.attributes.cover.data.attributes.formats.thumbnail.url
+              }
+              slug={post.attributes.slug}
+              title={post.attributes.title}
+            />
           );
         })}
       </HomeContainer>
