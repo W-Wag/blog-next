@@ -1,10 +1,9 @@
 'use client';
 
 import { GetPostsData } from '@/domain/post/types';
-import { HomeContainer } from '@/containers/home/style';
-import Image from 'next/image';
 import { MainContainer } from '@/components/main_container';
 import { PostCard } from '@/components/post_card';
+import { HomeContainer } from './providers';
 
 export interface HomePageProps {
   posts: GetPostsData;

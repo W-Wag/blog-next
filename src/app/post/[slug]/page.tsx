@@ -1,3 +1,4 @@
+import { Post } from '@/containers/post';
 import { countAllPosts } from '@/data/posts/count-all-posts';
 import { getAllPosts } from '@/data/posts/get-all-posts';
 import { getPost } from '@/data/posts/get-post';
@@ -20,12 +21,7 @@ export default async function DynamicPost({ params }: DynamicPostProps) {
   const { attributes } = post.data[0];
   const content = await markdownToHtml(attributes.content);
   const postData = { ...attributes, content };
-  return (
-    <>
-      <h1>{postData.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: postData.content }} />
-    </>
-  );
+  return <Post post={postData} />;
 }
 
 export async function generateStaticParams() {
