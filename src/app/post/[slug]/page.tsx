@@ -2,6 +2,7 @@ import { countAllPosts } from '@/data/posts/count-all-posts';
 import { getAllPosts } from '@/data/posts/get-all-posts';
 import { getPost } from '@/data/posts/get-post';
 import { GetPostsData } from '@/domain/post/types';
+import { markdownToHtml } from '@/lib/markdown-to-html';
 import { redirect } from 'next/navigation';
 
 export interface DynamicPostProps {
@@ -17,7 +18,14 @@ export default async function DynamicPost({ params }: DynamicPostProps) {
     return redirect('/404');
   }
   const { attributes } = post.data[0];
-  return <h1>{attributes.title}</h1>;
+  const content = await markdownToHtml(attributes.content);
+  const postData = { ...attributes, content };
+  return (
+    <>
+      <h1>{postData.title}</h1>
+      <p dangerouslySetInnerHTML={{ __html: postData.content }} />
+    </>
+  );
 }
 
 export async function generateStaticParams() {

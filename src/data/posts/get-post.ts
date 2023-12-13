@@ -5,5 +5,6 @@ export const getPost = async (slug: string | string[]) => {
   if (!res.ok) {
     console.log(res.status);
   }
-  return res.json();
+  const response = res.json();
+  return response;
 };
