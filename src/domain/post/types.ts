@@ -79,10 +79,10 @@ export type PostAttributesData = {
   content: string;
   slug: string;
   author: PostAuthor;
-  category: PostCategory;
+  categorie: PostCategory;
   created_by: PostCreatedBy;
   updated_by: PostCreatedBy;
-  created_at: string;
+  createdAt: string;
   updated_at: string;
   cover: PostCover;
 };
