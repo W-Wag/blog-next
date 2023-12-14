@@ -14,7 +14,7 @@ export function Comments({ slug, title }: CommentsProps) {
       <DiscussionEmbed
         shortname="blog-strapi-1"
         config={{
-          url: `${process.env.SITE_URL}/post/${slug}`,
+          url: `https://blog-next-w-wag.vercel.app/post/${slug}`,
           identifier: slug,
           title: title,
           language: 'pt_BR',
