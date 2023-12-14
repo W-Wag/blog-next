@@ -1,5 +1,6 @@
 import { Heading } from '@/components/heading';
 import { MainContainer } from '@/components/main_container';
+import { PostContainer } from '@/components/post-container';
 import { PostDetails } from '@/components/post-details';
 import { PostCover } from '@/components/post_cover';
 import { PostAttributesData } from '@/domain/post/types';
@@ -22,7 +23,7 @@ export function Post({ post }: PostProps) {
         categorie={post.categorie.data.attributes.name}
       />
 
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <PostContainer content={post.content} />
     </MainContainer>
   );
 }
