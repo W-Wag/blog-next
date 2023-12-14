@@ -1,3 +1,4 @@
+import { Comments } from '@/components/comments';
 import { Heading } from '@/components/heading';
 import { MainContainer } from '@/components/main_container';
 import { PostContainer } from '@/components/post-container';
@@ -24,6 +25,8 @@ export function Post({ post }: PostProps) {
       />
 
       <PostContainer content={post.content} />
+
+      <Comments slug={post.slug} title={post.title} />
     </MainContainer>
   );
 }
