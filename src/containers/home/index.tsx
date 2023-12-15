@@ -4,14 +4,17 @@ import { GetPostsData } from '@/domain/post/types';
 import { MainContainer } from '@/components/main_container';
 import { PostCard } from '@/components/post_card';
 import { HomeContainer } from './providers';
+import { CategoryTitle } from './style';
 
 export interface HomePageProps {
   posts: GetPostsData;
+  category?: string;
 }
 
-export default function HomePage({ posts }: HomePageProps) {
+export default function HomePage({ posts, category }: HomePageProps) {
   return (
     <MainContainer>
+      {category && <CategoryTitle>Categoria: {category}</CategoryTitle>}
       <HomeContainer>
         {posts.data.map((post) => {
           return (

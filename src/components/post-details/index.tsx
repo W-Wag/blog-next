@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { Date } from '../date';
 import { PostDetailsContainer } from './style';
 
@@ -12,7 +13,7 @@ export function PostDetails({ date, author, categorie }: PostDetailsProps) {
   return (
     <PostDetailsContainer>
       Publicado em <Date date={date} /> por <span>{author}</span> na categoria{' '}
-      {categorie}
+      <Link href={`/categories/${categorie}`}>{categorie}</Link>
     </PostDetailsContainer>
   );
 }
