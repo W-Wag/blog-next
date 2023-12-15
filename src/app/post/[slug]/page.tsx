@@ -5,6 +5,12 @@ import { getPost } from '@/data/posts/get-post';
 import { GetPostsData } from '@/domain/post/types';
 import { markdownToHtml } from '@/lib/markdown-to-html';
 import { redirect } from 'next/navigation';
+import { Metadata, ResolvingMetadata } from 'next';
+import { removeHTML } from '@/lib/remove-html';
+
+type Props = {
+  params: { slug: string };
+};
 
 export interface DynamicPostProps {
   params: {
@@ -33,4 +39,20 @@ export async function generateStaticParams() {
   return posts.data.map((post) => ({
     slug: post.attributes.slug,
   }));
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = params.slug;
+
+  const post: GetPostsData = await getPost(slug);
+
+  return {
+    title: `${post.data[0].attributes.title} | Next Blog`,
+    description: removeHTML(
+      await markdownToHtml(post.data[0].attributes.content),
+    ).slice(0, 150),
+  };
 }
