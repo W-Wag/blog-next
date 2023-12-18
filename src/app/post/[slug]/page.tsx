@@ -8,10 +8,6 @@ import { redirect } from 'next/navigation';
 import { Metadata, ResolvingMetadata } from 'next';
 import { removeHTML } from '@/lib/remove-html';
 
-type Props = {
-  params: { slug: string };
-};
-
 export interface DynamicPostProps {
   params: {
     slug: string;
@@ -42,7 +38,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  { params }: Props,
+  { params }: DynamicPostProps,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const slug = params.slug;

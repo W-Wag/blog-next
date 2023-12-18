@@ -13,7 +13,7 @@ export function PostDetails({ date, author, categorie }: PostDetailsProps) {
   return (
     <PostDetailsContainer>
       Publicado em <Date date={date} /> por <span>{author}</span> na categoria{' '}
-      <Link href={`/categories/${categorie}`}>{categorie}</Link>
+      <Link href={`/categories/${categorie.toLowerCase()}`}>{categorie}</Link>
     </PostDetailsContainer>
   );
 }
