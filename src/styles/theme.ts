@@ -23,7 +23,7 @@ export const defaultTheme = {
       small: '1.2rem',
       medium: '1.8rem',
       large: '2rem',
-      superLarge: '3rem',
+      superLarge: '5rem',
     },
   },
 } as const;
