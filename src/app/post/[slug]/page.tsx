@@ -17,7 +17,7 @@ export interface DynamicPostProps {
 export default async function DynamicPost({ params }: DynamicPostProps) {
   const post: GetPostsData = await getPost(params.slug);
 
-  if (post.data.length === 0) {
+  if (!post.data.length) {
     return redirect('/404');
   }
   const { attributes } = post.data[0];
@@ -31,6 +31,10 @@ export async function generateStaticParams() {
   const posts: GetPostsData = await getAllPosts(
     `pagination[limit]=${numberOfPosts}`,
   );
+
+  if (!posts.data.length) {
+    return;
+  }
 
   return posts.data.map((post) => ({
     slug: post.attributes.slug,
@@ -52,3 +56,6 @@ export async function generateMetadata(
     ).slice(0, 150),
   };
 }
+
+export const dynamic = 'force-static';
+export const dynamicParams = false;

@@ -13,3 +13,8 @@ export const CategoryTitle = styled.h1`
   font-weight: bold;
   padding: ${(props) => props.theme.spacings.medium} 0;
 `;
+
+export const AllPostLink = styled.div`
+  margin: ${(props) => props.theme.spacings.large};
+  text-align: center;
+`;

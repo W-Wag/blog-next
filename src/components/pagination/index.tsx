@@ -19,8 +19,6 @@ export function Pagination({
   const hasNextPage = nextPage * postPerPage < postPerPage + numberOfPosts;
   const hasPreviousPage = previousPage >= 1;
 
-  console.log(postPerPage);
-
   return (
     <PaginationContainer>
       {hasPreviousPage && (
