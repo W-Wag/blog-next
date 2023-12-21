@@ -3,5 +3,8 @@
     "next/core-web-vitals",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended"
+  ],
+  "ignorePatterns": [
+    "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)", "../src/**/stories.@(js|jsx|mjs|ts|tsx)"
   ]
 }

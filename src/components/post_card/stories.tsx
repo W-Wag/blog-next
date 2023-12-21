@@ -1,9 +1,8 @@
-
-import { Meta, StoryFn } from "@storybook/react";
-import { PostCard, PostCardProps } from ".";
-import { ThemeProvider } from "styled-components";
-import { defaultTheme } from "../../styles/theme";
-import { GlobalStyles } from "../../styles/global";
+import { Meta, StoryFn } from '@storybook/react';
+import { PostCard, PostCardProps } from '.';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '../../styles/theme';
+import { GlobalStyles } from '../../styles/global';
 
 const meta: Meta<typeof PostCard> = {
   title: 'Post Card',
@@ -19,15 +18,18 @@ const meta: Meta<typeof PostCard> = {
         <Story />
         <GlobalStyles />
       </ThemeProvider>
-    )
-  ]
-}
+    ),
+  ],
+};
 
-export const TypescriptCover: StoryFn<PostCardProps> = (args) => <PostCard {...args} />;
-export const JavascriptCover: StoryFn<PostCardProps> = (args) => <PostCard {...args} />;
+export const TypescriptCover: StoryFn<PostCardProps> = (args) => (
+  <PostCard {...args} />
+);
+export const JavascriptCover: StoryFn<PostCardProps> = (args) => (
+  <PostCard {...args} />
+);
 JavascriptCover.args = {
-  cover: '/images/javascript-cover.png'
-}
+  cover: '/images/javascript-cover.png',
+};
 
-export default meta
-
+export default meta;
