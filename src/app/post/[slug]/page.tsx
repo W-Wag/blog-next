@@ -32,10 +32,6 @@ export async function generateStaticParams() {
     `pagination[limit]=${numberOfPosts}`,
   );
 
-  if (!posts.data.length) {
-    return;
-  }
-
   return posts.data.map((post) => ({
     slug: post.attributes.slug,
   }));
