@@ -1,36 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blog Next
 
-## Getting Started
+Esse repositório foi feito com base na **sessão 29 Next JS e Strapi** do curso [Curso de JavaScript e TypeScript do básico ao avançado JS/TS
+](https://www.udemy.com/course/curso-de-javascript-moderno-do-basico-ao-avancado) do professor [Luiz Ótavio Miranda](https://github.com/luizomf/), onde se utilizou do Strapi para construir uma API rapidamente e de fácil gerenciamento e criação de conteúdo, tendo o seu repositório disponível em [Blog Strapi](https://github.com/w-wag/blog-strapi). Com a API pronta foi a hora de utilizar do **Next.js** para construção do front-end com geração de páginas estáticas(SSG) e renderização pelo lado do servidor(SSR), para construir um blog simples para juntar ambos os recursos do Next e do Strapi.
 
-First, run the development server:
+Durante o processo de realização dessa sessão houve algumas dificuldades a ser batidas como a questão das versões do Next e do Strapi já que no curso a versão do Next é a **12** é a utilizada nesse repositório e a **14** tendo diversas diferenças na questão do funcionamento das funções de SSR e SSG. Já no Strapi também teve essa questão de diferença de versões sendo utilizado a **V4** que se difere em algumas questões do que a apresentada no curso. Porém eu levei como desafio essa diferença e depois de ler um pouco mais as documentações atuais e alguns foruns de ajuda foi possivel passar esse desafio a frente e concluir com exito essa sessão sem que nada que foi explicado falta-se.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Durante essa sessão também foi introduzido como fazer testes unitários com o **jest** no Next, além de como testar componentes isoladamente com a utilização do **StoryBook**, onde isso abre uma porta para que os projetos sejam cada vez mais aperfeiçoados tanto em questão de detalhe como em trazer mais segurança que uma funcionalidade do projeto funcione de modo correto.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Bibliotecas Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [NextJS](https://nextjs.org/)
+- [Disqus](https://disqus.com)
+- [Styled Components](https://styled-components.com/)
+- [Jest](https://jestjs.io/pt-BR/)
+- [StoryBook](https://storybook.js.org/)
+- [Typescript](https://www.typescriptlang.org/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Acesse agora mesmo
+https://blog-next-w-wag.vercel.app/
